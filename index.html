@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sabrina Magalhães - Fisioterapia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-escuro: #224040;
+      --roxo: #5E2C74;
+      --bege: #F4E6D2;
+      --verde-tipografia: #2F5D58;
+      --cinza-claro: #F8F8F8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bege);
+      color: var(--verde-escuro);
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: var(--verde-escuro);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
+
+    nav {
+      margin-left: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--bege);
+    }
+
+    section {
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .perfil {
+      text-align: center;
+      background-color: var(--cinza-claro);
+      border-radius: 12px;
+      padding: 60px 40px;
+    }
+
+    .perfil img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      object-position: center top;
+    }
+
+    .perfil h1 {
+      font-size: 2.5rem;
+      color: var(--verde-tipografia);
+    }
+
+    .perfil p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .servico {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+
+    .servico h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--roxo);
+    }
+
+    .servico img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .btn {
+      background-color: var(--roxo);
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #783497;
+    }
+
+    footer {
+      background-color: var(--verde-escuro);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .whatsapp-fixo {
+      position: fixed;
+      bottom: 20px;
+      right: 3px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+      background-color: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .whatsapp-fixo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bloco-mapa {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px auto;
+      padding-bottom: 160px;
+    }
+
+    .bloco-mapa iframe {
+      width: 500px;
+      height: 450px;
+      border: 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .fechar-mapa {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 68px;
+        right: 20px;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--verde-escuro);
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .servico {
+        padding: 20px;
+      }
+
+      .bloco-mapa iframe {
+        width: 90%;
+        height: 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo"><img src="/public/logo.png" style="max-height: 130px; height: auto; width: auto;" />
+      </div>
+      <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="perfil" id="sobre">
+    <img src="/public/fisioterapeutasabrina.jpeg" alt="Foto da Fisioterapeuta Sabrina Magalhães">
+    <h1>Sabrina Magalhães</h1>
+    <p>Fisioterapeuta com mais de 10 anos de experiência em reabilitação física e bem-estar. Atendimentos personalizados, com foco na humanização, no cuidado e no uso de tecnologias como FES, TENS e Pilates para promover funcionalidade e qualidade de vida. Atende a domicílio com conforto e excelência.</p>
+  </section>
+
+  <section id="servicos">
+    <div class="container">
+      <div class="servico">
+        <h2>Fisioterapia Domiciliar</h2>
+        <img src="/public/sabrina1.jpeg" alt="Fisioterapia Domiciliar em casa">
+        <p>Tratamentos individualizados no conforto do lar. Indicado para pacientes com dificuldade de locomoção, idosos ou em recuperação pós-cirúrgica.</p>
+      </div>
+      <div class="servico">
+        <h2>Pilates Terapêutico</h2>
+        <img src="/public/sabrina2.jpeg" alt="Pilates com fisioterapeuta">
+        <p>Aulas de Pilates personalizadas com foco em reeducação postural, fortalecimento muscular e alívio de dores crônicas.</p>
+      </div>
+      <div class="servico">
+        <h2>Reabilitação Ortopédica</h2>
+        <img src="public/sabrina3.jpeg" alt="Terapia ortopédica">
+        <p>Atuação em lesões musculares, articulares e reabilitação pós-fraturas ou cirurgias ortopédicas.</p>
+      </div>
+      <div class="servico">
+        <h2>Fisioterapia Neurológica</h2>
+        <img src="public/sabrina4.jpeg" alt="Terapia para pacientes neurológicos">
+        <p>Reabilitação para pacientes com AVC, Parkinson, Alzheimer e esclerose múltipla, com técnicas específicas para cada caso.</p>
+      </div>
+      <div class="servico">
+        <h2>FES, TENS e Corrente Russa</h2>
+        <img src="public/sabrina5.jpeg" alt="Estímulos elétricos terapêuticos">
+        <p>Terapias com eletroestimulação para alívio da dor, fortalecimento e recuperação muscular.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="perfil">
+    <h2>Entre em Contato</h2>
+    <p>Agende sua avaliação e comece seu tratamento com quem entende de cuidado. Atendimento em domicílio, com flexibilidade e atenção completa ao paciente.</p>
+    <a href="https://wa.me/5534999582089?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio" class="btn" target="_blank">
+       Agende o seu horário
+    </a>
+    <div style="margin-top: 20px;">
+      <button id="btnAbrirMapa" class="btn">📍 Veja a localização</button>
+    </div>
+  </section>
+
+  <div id="mapaContainer" class="bloco-mapa" style="display: none;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.77921686754!2d-46.530843723911886!3d-18.58398988252201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94aef52691177883%3A0x74a0932ea7361801!2sAtiva%20N%C3%BAcleo%20Integrado%20de%20Sa%C3%BAde!5e0!3m2!1spt-BR!2sbr!4v1746628685227!5m2!1spt-BR!2sbr" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <button id="btnFecharMapa" class="btn fechar-mapa">❌ Fechar mapa</button>
+  </div>
+
+  <a class="whatsapp-fixo" href="https://wa.me/5534999582089?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio" target="_blank">
+    <img src="public/whatsapp.png" alt="WhatsApp" />
+  </a>
+
+  <footer>
+    <p><img src="public/WhatsApp.svg.png" alt="" style="width: 12px;"> Telefone: (34) 99958-2089 &nbsp;|&nbsp; 📍 Endereço: Clínica Ativa, Patos de Minas - MG &nbsp;|&nbsp; <img src="Instagram_icon.png" alt="" style="width: 12px;"> Instagram: 
+      <a href="https://instagram.com/sabrina.magalhaes.fisio" target="_blank" style="color:#fff; text-decoration: underline;">
+        @sabrina.magalhaes.fisio 
+      </a>
+      &nbsp;|&nbsp;
+      <img src="public/Gmail_icon.svg.png" alt="" style="width: 12px;"> E-mail: sabrinamborges16@gmail.com
+    </p>
+    <br>
+    <p>&copy; 2025 Sabrina Magalhães - Fisioterapeuta. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 150);
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+
+    const btnAbrirMapa = document.getElementById("btnAbrirMapa");
+    const btnFecharMapa = document.getElementById("btnFecharMapa");
+    const mapaContainer = document.getElementById("mapaContainer");
+
+    btnAbrirMapa.addEventListener("click", () => {
+      mapaContainer.style.display = "flex";
+      btnAbrirMapa.style.display = "none";
+    });
+
+    btnFecharMapa.addEventListener("click", () => {
+      mapaContainer.style.display = "none";
+      btnAbrirMapa.style.display = "inline-block";
+    });
+
+    // Força scroll suave ao clicar no menu
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const destino = document.querySelector(this.getAttribute('href'));
+        destino.scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('nav ul').classList.remove('active'); // Fecha o menu em mobile
+      });
+    });
+  </script>
+</body>
+</html>
