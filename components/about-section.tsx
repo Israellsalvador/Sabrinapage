@@ -76,13 +76,12 @@ export function AboutSection() {
           >
             <h3 className="text-2xl font-bold text-verde-tipografia mb-4">Experiência e Dedicação</h3>
             <p className="text-verde-escuro mb-6 text-lg">
-              Fisioterapeuta com mais de 10 anos de experiência em reabilitação física e bem-estar. Especializada em
-              atendimentos personalizados, com foco na humanização, no cuidado e no uso de tecnologias como FES, TENS e
-              Pilates para promover funcionalidade e qualidade de vida.
+              Olá! Eu sou Sabrina Magalhães Borges, fisioterapeuta apaixonada por promover saúde e bem-estar. Especialista em Pilates e atendimento domiciliar, levo tratamentos personalizados até o conforto da sua casa.
+              Utilizo equipamentos modernos como FES, TENS e Corrente Russa para acelerar a recuperação, reduzir dores e melhorar sua mobilidade. Também ofereço tratamento com laser terapêutico, uma tecnologia que potencializa a cicatrização, alivia inflamações e promove um alívio eficaz da dor.
+              Meu foco é cuidar de você de forma humanizada, respeitando suas necessidades e objetivos, para que você possa viver com mais qualidade, saúde e equilíbrio.
             </p>
             <p className="text-verde-escuro mb-8 text-lg">
-              Formada pela Universidade Federal de Uberlândia, com especializações em Fisioterapia Neurológica e
-              Ortopédica, além de certificações em Pilates Clínico e técnicas avançadas de reabilitação.
+              Graduada em Fisioterapia pelo Centro Universitário de Patos de Minas.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
