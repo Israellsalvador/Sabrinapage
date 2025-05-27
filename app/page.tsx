@@ -34,23 +34,26 @@ export default function Home() {
       <ScrollToTop />
 
       {/* WhatsApp Float Button */}
-      <Link
-        href="https://wa.me/5534999582089?text=Olá,%20vim%20do%20site%20e%20gostaria%20de%20agendar%20um%20horário"
-        target="_blank"
-        className="fixed bottom-6 right-6 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50 animate-bounce hover:animate-none group"
-        aria-label="Contato via WhatsApp"
-      >
-        <Image
-          src="/whatsapp.png"
-          alt="WhatsApp"
-          width={32}
-          height={32}
-          className="min-w-[32px] group-hover:scale-110 transition-transform duration-300"
-        />
-        <div className="absolute -top-12 right-0 bg-verde-escuro text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Fale conosco!
-        </div>
-      </Link>
+     <Link
+  href="https://wa.me/5534999582089?text=Olá,%20vim%20do%20site%20e%20gostaria%20de%20agendar%20um%20horário"
+  target="_blank"
+  className="fixed bottom-6 right-6 p-2 rounded-full shadow-2xl z-50 hover:scale-105 transition-all duration-300 group"
+  aria-label="Contato via WhatsApp"
+>
+  <div className="animate-[bounce_2s_infinite] group-hover:animate-none">
+    <Image
+      src="/whatsapp.png"
+      alt="WhatsApp"
+      width={50}
+      height={50}
+      className="w-8 h-8 transition-transform duration-300"
+    />
+  </div>
+  <div className="absolute -top-12 right-0 bg-verde-escuro text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+    Fale conosco!
+  </div>
+</Link>
+
     </main>
   )
 }
