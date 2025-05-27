@@ -1,0 +1,76 @@
+:root {
+    --verde-escuro: #224040;
+    --roxo: #5E2C74;
+    --bege: #F4E6D2;
+    --verde-tipografia: #2F5D58;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: var(--bege);
+    color: var(--verde-escuro);
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 0;
+  }
+  
+  header {
+    background-color: var(--verde-escuro);
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .logo {
+    max-height: 60px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .hero {
+    background-color: var(--verde-escuro);
+    color: var(--bege);
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    color: var(--verde-tipografia);
+  }
+  
+  .btn {
+    background-color: var(--roxo);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  .sobre, .servicos, .contato {
+    background-color: var(--bege);
+    padding: 40px 20px;
+  }
+  
+  footer {
+    text-align: center;
+    background-color: var(--verde-escuro);
+    color: white;
+    padding: 20px 0;
+  }

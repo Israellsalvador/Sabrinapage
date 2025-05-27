@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --verde-escuro: #2f5d58;
+  --roxo: #8b5a96;
+  --bege: #f5f5f0;
+  --verde-tipografia: #4a7c7a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-montserrat), sans-serif;
+  color: var(--verde-escuro);
+  background-color: var(--bege);
+}
+
+@layer base {
+  :root {
+    --background: 245 245 240;
+    --foreground: 47 93 88;
+
+    --card: 255 255 255;
+    --card-foreground: 47 93 88;
+
+    --popover: 255 255 255;
+    --popover-foreground: 47 93 88;
+
+    --primary: 47 93 88;
+    --primary-foreground: 245 245 240;
+
+    --secondary: 245 245 240;
+    --secondary-foreground: 47 93 88;
+
+    --muted: 245 245 240;
+    --muted-foreground: 74 124 122;
+
+    --accent: 245 245 240;
+    --accent-foreground: 47 93 88;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 47 93 88;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 47 93 88;
+    --foreground: 245 245 240;
+
+    --card: 47 93 88;
+    --card-foreground: 245 245 240;
+
+    --popover: 47 93 88;
+    --popover-foreground: 245 245 240;
+
+    --primary: 245 245 240;
+    --primary-foreground: 47 93 88;
+
+    --secondary: 74 124 122;
+    --secondary-foreground: 245 245 240;
+
+    --muted: 74 124 122;
+    --muted-foreground: 245 245 240;
+
+    --accent: 74 124 122;
+    --accent-foreground: 245 245 240;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 74 124 122;
+    --input: 74 124 122;
+    --ring: 245 245 240;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Classes personalizadas */
+.bg-verde-escuro {
+  background-color: var(--verde-escuro);
+}
+
+.bg-roxo {
+  background-color: var(--roxo);
+}
+
+.bg-bege {
+  background-color: var(--bege);
+}
+
+.text-verde-escuro {
+  color: var(--verde-escuro);
+}
+
+.text-roxo {
+  color: var(--roxo);
+}
+
+.text-bege {
+  color: var(--bege);
+}
+
+.text-verde-tipografia {
+  color: var(--verde-tipografia);
+}
+
+.border-verde-escuro {
+  border-color: var(--verde-escuro);
+}
+
+.border-roxo {
+  border-color: var(--roxo);
+}
+
+.border-bege {
+  border-color: var(--bege);
+}
+
+.hover\:bg-verde-escuro:hover {
+  background-color: var(--verde-escuro);
+}
+
+.hover\:bg-roxo\/90:hover {
+  background-color: rgb(139 90 150 / 0.9);
+}
+
+.hover\:bg-roxo\/80:hover {
+  background-color: rgb(139 90 150 / 0.8);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
