@@ -62,7 +62,7 @@ export function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-verde-escuro/70 to-transparent flex items-end">
                 <div className="p-6">
-                  <p className="text-white text-lg font-medium">Fisioterapeuta CREFITO-X XXXXX-F</p>
+                  <p className="text-white text-lg font-medium">Fisioterapeuta CREFITO 422034-F</p>
                 </div>
               </div>
             </div>
